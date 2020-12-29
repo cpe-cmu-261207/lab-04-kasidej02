@@ -2,8 +2,7 @@ import { useState } from "react";
 import { CourseCard } from "./components/CourseCard";
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css" />
-{/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-  integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"></link> */}
+
 
 function App() {
   const grade = ["A", "B+", "B", "C+", "C", "D+", "D", "F", "W"];
@@ -68,7 +67,7 @@ function App() {
       }
 
     });
-    if (decourse.length == 0 && decourse) {
+    if (decourse.length === 0 && decourse) {
       setGPA(0.00)
     }
     else {
@@ -86,8 +85,8 @@ function App() {
     event.preventDefault();
     // TODO
     const add_course = [...myCourses, inputData]
-    if (inputData.name == "" || inputData.code == "" || inputData.creditt == "" || inputData.gradee == "") { alert("Please input course information") }
-    else if (inputData.code.length != 6) {
+    if (inputData.name === "" || inputData.code === "" || inputData.creditt === "" || inputData.gradee === "") { alert("Please input course information") }
+    else if (inputData.code.length !== 6) {
       alert("course code must has 6 character")
     }
     else {
@@ -105,7 +104,7 @@ function App() {
   function onDeleteCourse(name) {
     // TODO
     const decourse = myCourses.filter(function (objj) {
-      return objj.name != name;
+      return objj.name !== name;
     });
     setMyCourse(decourse)
     calculateGPA(decourse)
@@ -113,8 +112,8 @@ function App() {
 
 
   return (
-    <div className="container mx-auto h-screen">
-      <h1 className="text-center text-4xl p-3 tracking-widest">
+    <div className="container align-middle">
+      <h1 className="text-center text-4xl p-3 tracking-widest mt-10">
         GPA CALCULATOR
       </h1>
       <div className="space-x-4 mine">
